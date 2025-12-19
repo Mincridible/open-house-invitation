@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minara Residence Open House</title>
+    <meta name="description" content="You are cordially invited to the Minara Residence Open House.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ENTER OVERLAY -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <span class="eyebrow">You are invited</span>
+            <h1>The Open House</h1>
+            <button id="enter-btn">View Invitation</button>
+        </div>
+    </div>
+
+    <!-- MAIN NAV (Hidden initially) -->
+    <nav>
+        <div class="logo">MR.</div>
+        <div class="music-trigger" id="music-toggle">
+            <span class="icon">♫</span>
+            <span class="label">Music On</span>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="subtitle fade-up">Join us for an evening of elegance</p>
+            <h1 class="title fade-up delay-1">Minara Residence</h1>
+            <p class="date fade-up delay-2">Saturday, October 24th, 2025</p>
+        </div>
+    </header>
+
+    <!-- INTRO TEXT -->
+    <section class="intro">
+        <div class="container small">
+            <p class="lead-text reveal-text">
+                We are opening our doors to celebrate new beginnings, great food, and even better company. 
+                Experience a curated dining experience in the comfort of our home.
+            </p>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="menu">
+        <div class="container">
+            <h2 class="section-title">The Menu</h2>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <div class="menu-card fade-up">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-text">
+                        <h3>Signature Steak</h3>
+                        <p>Prime cut, grilled to medium-rare perfection with rosemary butter.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-card fade-up delay-1">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1626844131082-256783844137?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-text">
+                        <h3>Bolognese Pasta</h3>
+                        <p>Slow-cooked wagyu beef ragu with fresh handmade tagliatelle.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-card fade-up delay-2">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-text">
+                        <h3>Creamy Mash</h3>
+                        <p>Yukon Gold potatoes whipped with truffle oil and chives.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="menu-card fade-up">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-text">
+                        <h3>Kek Batik</h3>
+                        <p>Traditional Malaysian chocolate biscuit cake, rich and decadent.</p>
+                    </div>
+                </div>
+
+               <!-- Item 5 -->
+               <div class="menu-card fade-up delay-1">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-text">
+                        <h3>Refreshments</h3>
+                        <p>Bottomless Coway purified water & seasonal cordials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section class="details">
+        <div class="container">
+            <div class="details-box parralax-box">
+                <div class="detail-row">
+                    <h3>When</h3>
+                    <p>Saturday, Oct 24th, 2025<br>4:00 PM - 9:00 PM</p>
+                </div>
+                <hr>
+                <div class="detail-row">
+                    <h3>Where</h3>
+                    <p>The Minara Residence<br>123 Skyline Avenue, Cloud City</p>
+                </div>
+                <hr>
+                <div class="detail-row">
+                    <h3>RSVP</h3>
+                    <p>No RSVP required. Just bring your appetite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Minara Residence. We look forward to seeing you.</p>
+    </footer>
+
+    <!-- Audio Player -->
+    <audio id="bg-music" loop>
+        <!-- REPLACE WITH YOUR MP3 URL -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Script to handle Entrance Overlay and Intersection Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('intro-overlay');
+            const enterBtn = document.getElementById('enter-btn');
+            const music = document.getElementById('bg-music');
+            const musicToggle = document.getElementById('music-toggle');
+            const musicLabel = musicToggle.querySelector('.label');
+
+            let isPlaying = false;
+
+            // ENTER EXPERIENCE
+            enterBtn.addEventListener('click', () => {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    // Trigger scroll animations for Hero
+                    document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+                }, 800);
+
+                // Play Music
+                music.volume = 0.4;
+                music.play().then(() => {
+                    isPlaying = true;
+                }).catch(err => console.log('Autoplay fail', err));
+            });
+
+            // MUSIC TOGGLE
+            musicToggle.addEventListener('click', () => {
+                if(isPlaying) {
+                    music.pause();
+                    musicLabel.textContent = "Music Off";
+                    musicToggle.style.opacity = "0.5";
+                } else {
+                    music.play();
+                    musicLabel.textContent = "Music On";
+                    musicToggle.style.opacity = "1";
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // SCROLL ANIMATIONS (Intersection Observer)
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up, .reveal-text').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
