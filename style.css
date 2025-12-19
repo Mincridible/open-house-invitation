@@ -87,7 +87,7 @@ h1 {
 
 /* Freeform Photo */
 .hero-image {
-    width: 100%;
+    width: 50%;
     max-width: 380px;          /* controls overall size */
     aspect-ratio: 1 / 1;       /* force square */
     object-fit: cover;         /* crop nicely */
