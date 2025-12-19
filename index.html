@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open House Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- OVERLAY -->
+    <div id="entrance-overlay">
+        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 10px;">The Open House</h2>
+        <button class="enter-btn" onclick="enterSite()">View Invitation</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container" id="main-content">
+
+        <header>
+            <p class="subtitle">YOU ARE CORDIALLY INVITED TO THE</p>
+            <h1>Minara Residence</h1>
+            <p class="subtitle">OPEN HOUSE</p>
+        </header>
+
+        <!-- LARGE PHOTO -->
+        <!-- REPLACE URL -->
+        <img src="https://images.unsplash.com/photo-1544025162-d76690b67f14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
+            alt="Event" class="hero-image">
+
+        <div class="details-grid">
+            <div class="detail-item">
+                <h3>When</h3>
+                <p>Saturday, October 24th, 2025</p>
+                <p>4:00 PM onwards</p>
+            </div>
+            <div class="detail-item">
+                <h3>Where</h3>
+                <p>123 Skyline Avenue</p>
+                <p>Cloud City, Malaysia</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- MENU SECTION -->
+        <div class="menu-section">
+            <h2 class="menu-title">On The Menu</h2>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span>Signature Steak</span>
+                    <span>Grilled to perfection</span>
+                </li>
+                <li class="menu-item">
+                    <span>Bolognese Pasta</span>
+                    <span>Classic Italian ragu</span>
+                </li>
+                <li class="menu-item">
+                    <span>Mashed Potato</span>
+                    <span>Buttery & creamy</span>
+                </li>
+                <li class="menu-item">
+                    <span>Kek Batik</span>
+                    <span>Traditional chocolate treat</span>
+                </li>
+                <li class="menu-item">
+                    <span>Coway Water</span>
+                    <span>Bottomless</span>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>WE LOOK FORWARD TO SEEING YOU</p>
+        </footer>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+        <!-- REPLACE URL -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const overlay = document.getElementById('entrance-overlay');
+        const content = document.getElementById('main-content');
+        let isPlaying = false;
+
+        function enterSite() {
+            // Try starting music immediately on user interaction
+            bgMusic.play().then(() => {
+                isPlaying = true;
+            }).catch(e => {
+                console.log("Autoplay prevented even with click?", e);
+            });
+
+            // Hide overlay, show content
+            overlay.classList.add('fade-out');
+            content.classList.add('fade-in');
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+            } else {
+                bgMusic.play();
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+
+</html>
